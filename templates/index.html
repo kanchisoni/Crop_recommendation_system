@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>ML API</title>
+<!--  <link rel="style"href="style.css">-->
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+<!--    <link rel="stylesheet" href="styles.css">-->
+
+   
+</head>
+<body>
+    <div class="login">
+        <h1>Crop Recommendation System</h1>
+        
+        
+        <form action="{{ url_for('predict') }}" method="POST">
+            <input type="number" step="any" name="Nitrogen" placeholder="Nitrogen (kg/ha)" required="required" value="{{ input_values['Nitrogen'] if input_values and 'Nitrogen' in input_values else '' }}" />
+            <input type="number" step="any" name="Phosphorus" placeholder="Phosphorus (kg/ha)" required="required" value="{{ input_values['Phosphorus'] if input_values and 'Phosphorus' in input_values else '' }}" />
+            <input type="number" step="any" name="Potassium" placeholder="Potassium (kg/ha)" required="required" value="{{ input_values['Potassium'] if input_values and 'Potassium' in input_values else '' }}" />
+            <input type="number" step="any" name="temperature" placeholder="Temperature (°C)" required="required" value="{{ input_values['temperature'] if input_values and 'temperature' in input_values else '' }}" />
+            <input type="number" step="any" name="humidity" placeholder="Humidity (%)" required="required" value="{{ input_values['humidity'] if input_values and 'humidity' in input_values else '' }}" />
+            <input type="number" step="any" name="pH" placeholder="pH Level" required="required" value="{{ input_values['pH'] if input_values and 'pH' in input_values else '' }}" />
+            <input type="number" step="any" name="rainfall" placeholder="Rainfall (mm)" required="required" value="{{ input_values['rainfall'] if input_values and 'rainfall' in input_values else '' }}" />
+        
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+        
+        {% if prediction_text %}
+            <p>{{ prediction_text }}</p>
+        {% endif %}
+        
+               
+        
+    </div> 
+    
+    <h1 id="prediction" class="prediction"
+        style="font-family: 'Pacifico', cursive; font-size: 2.5em; color: #ffffff; text-align: center; margin-top: 20px;">
+        {{ Prediction }}
+    {{ Prediction }}
+    </h1>
+
+</body>
+
+
+</html>

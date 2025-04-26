@@ -1,0 +1,40 @@
+
+body{
+   background-image: url("farm.jpg");
+   margin-top: 100px;
+   margin-bottom: 100px;
+   margin-left: 500px;
+   margin-right: 150px; 
+}
+h1{
+    margin-left: 100px;
+}
+input{
+    width: 70%;
+    height: 40px;
+    margin: 8px 0;
+    padding: 12px 20px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border-bottom: 4px solid black;
+    border: 1px solid #ccc;
+}
+
+button{
+    width: 70%;
+    height: 40px;
+    background-color: #cfd86c;
+    color: rgb(27, 6, 6);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;    
+}
+
+#prediction {
+    color: white;              /* White color */
+    font-size: 48px;            /* Big text */
+    font-weight: bold;          /* Bold text */
+    text-align: center;         /* Centered */
+    margin-top: 20px;           /* Top space */
+}
